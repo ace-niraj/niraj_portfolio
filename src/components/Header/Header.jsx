@@ -32,11 +32,11 @@ function ElevationScroll(props) {
   });
 }
 const navList = [
-  { name: "home", value: 0 },
-  { name: "about", value: 1 },
-  { name: "services", value: 2 },
-  { name: "portfolio", value: 3 },
-  { name: "contact", value: 4 },
+  { key: 1, name: "home", value: 0 },
+  { key: 2, name: "about", value: 1 },
+  { key: 3, name: "services", value: 2 },
+  { key: 4, name: "portfolio", value: 3 },
+  { key: 5, name: "contact", value: 4 },
 ];
 const Header = () => {
   const classes = useStyles();
@@ -57,8 +57,9 @@ const Header = () => {
       className={classes.tabContainer}
       indicatorColor='primary'
     >
-      {navList.map(({ name, value }) => (
+      {navList.map(({ name, value, key }) => (
         <Tab
+          key={key}
           className={`${classes.tab} ${
             active === value ? `${classes.tabActive}` : ""
           }`}
@@ -76,103 +77,30 @@ const Header = () => {
         classes={{ paper: classes.drawer }}
       >
         <List className={classes.list}>
-          <ListItem
-            className={classes.listItem}
-            onClick={() => {
-              setDrawer(false);
-              setActive(0);
-            }}
-            divider
-            button
-          >
-            <ListItemText
-              disableTypography
-              arial-type='centered'
-              className={`${
-                active === 0
-                  ? `${classes.drawerActive}`
-                  : `${classes.drawerText}`
-              }`}
+          {navList.map(({ name, value, key }) => (
+            <ListItem
+              key={key}
+              className={classes.listItem}
+              onClick={() => {
+                setDrawer(false);
+                setActive(value);
+              }}
+              divider
+              button
             >
-              Home
-            </ListItemText>
-          </ListItem>
-          <ListItem
-            onClick={() => {
-              setDrawer(false);
-              setActive(1);
-            }}
-            divider
-            button
-          >
-            <ListItemText
-              disableTypography
-              className={` ${
-                active === 1
-                  ? `${classes.drawerActive}`
-                  : `${classes.drawerText}`
-              }`}
-            >
-              About
-            </ListItemText>
-          </ListItem>
-          <ListItem
-            onClick={() => {
-              setDrawer(false);
-              setActive(2);
-            }}
-            divider
-            button
-          >
-            <ListItemText
-              disableTypography
-              className={` ${
-                active === 2
-                  ? `${classes.drawerActive}`
-                  : `${classes.drawerText}`
-              }`}
-            >
-              Services
-            </ListItemText>
-          </ListItem>
-          <ListItem
-            onClick={() => {
-              setDrawer(false);
-              setActive(3);
-            }}
-            divider
-            button
-          >
-            <ListItemText
-              disableTypography
-              className={` ${
-                active === 3
-                  ? `${classes.drawerActive}`
-                  : `${classes.drawerText}`
-              }`}
-            >
-              Portfolio
-            </ListItemText>
-          </ListItem>
-          <ListItem
-            onClick={() => {
-              setDrawer(false);
-              setActive(4);
-            }}
-            divider
-            button
-          >
-            <ListItemText
-              disableTypography
-              className={` ${
-                active === 4
-                  ? `${classes.drawerActive}`
-                  : `${classes.drawerText}`
-              }`}
-            >
-              Contact
-            </ListItemText>
-          </ListItem>
+              <ListItemText
+                disableTypography
+                arial-type='centered'
+                className={`${
+                  active === value
+                    ? `${classes.drawerActive}`
+                    : `${classes.drawerText}`
+                }`}
+              >
+                {name}
+              </ListItemText>
+            </ListItem>
+          ))}
         </List>
       </SwipeableDrawer>
 
