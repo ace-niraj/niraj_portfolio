@@ -11,7 +11,7 @@ import {
   ListItem,
   ListItemText,
 } from "@material-ui/core";
-import { makeStyles, useTheme } from "@material-ui/styles";
+import { useTheme } from "@material-ui/styles";
 import { useMediaQuery } from "@material-ui/core";
 
 import MenuIcon from "@material-ui/icons/Menu";
@@ -31,7 +31,13 @@ function ElevationScroll(props) {
     elevation: trigger ? 4 : 0,
   });
 }
-
+const navList = [
+  { name: "home", value: 0 },
+  { name: "about", value: 1 },
+  { name: "services", value: 2 },
+  { name: "portfolio", value: 3 },
+  { name: "contact", value: 4 },
+];
 const Header = () => {
   const classes = useStyles();
   const [active, setActive] = useState(0);
@@ -51,36 +57,14 @@ const Header = () => {
       className={classes.tabContainer}
       indicatorColor='primary'
     >
-      <Tab
-        className={`${classes.tab} ${
-          active === 0 ? `${classes.tabActive}` : ""
-        }`}
-        label='Home'
-      />
-      <Tab
-        className={`${classes.tab} ${
-          active === 1 ? `${classes.tabActive}` : ""
-        }`}
-        label='About'
-      />
-      <Tab
-        className={`${classes.tab} ${
-          active === 2 ? `${classes.tabActive}` : ""
-        }`}
-        label='Services'
-      />
-      <Tab
-        className={`${classes.tab} ${
-          active === 3 ? `${classes.tabActive}` : ""
-        }`}
-        label='Portfolio'
-      />
-      <Tab
-        className={`${classes.tab} ${
-          active === 4 ? `${classes.tabActive}` : ""
-        }`}
-        label='Contact'
-      />
+      {navList.map(({ name, value }) => (
+        <Tab
+          className={`${classes.tab} ${
+            active === value ? `${classes.tabActive}` : ""
+          }`}
+          label={name}
+        />
+      ))}
     </Tabs>
   );
   const drawer = (
