@@ -17,6 +17,7 @@ import { useMediaQuery } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
 
 import logo from "../../assets/logo-1.png";
+import useStyles from "./style";
 
 function ElevationScroll(props) {
   const { children } = props;
@@ -30,63 +31,6 @@ function ElevationScroll(props) {
     elevation: trigger ? 4 : 0,
   });
 }
-
-const useStyles = makeStyles((theme) => ({
-  toolbarMargin: {
-    ...theme.mixins.toolbar,
-  },
-  logo: {
-    height: "4rem",
-    marginLeft: "25px",
-  },
-  tabContainer: {
-    marginLeft: "auto",
-  },
-  tab: {
-    fontFamily: "Open Sans",
-    fontWeight: 700,
-    minWidth: 10,
-    marginRight: "25px",
-  },
-  tabActive: {
-    color: theme.palette.common.blue,
-  },
-  drawerIcon: {
-    color: theme.palette.common.white,
-    marginLeft: "auto",
-    marginRight: "20px",
-    "&:hover": {
-      color: theme.palette.common.blue,
-    },
-  },
-
-  drawer: {
-    backgroundColor: theme.palette.common.black,
-    width: "50%",
-  },
-  list: {
-    margin: "auto 0",
-  },
-  drawerActive: {
-    color: theme.palette.common.blue,
-    fontFamily: "Open Sans",
-    fontWeight: 700,
-    textTransform: "uppercase",
-    textAlign: "center",
-    margin: "5vh auto",
-  },
-  drawerText: {
-    color: theme.palette.common.white,
-    fontFamily: "Open Sans",
-    fontWeight: 700,
-    textTransform: "uppercase",
-    textAlign: "center",
-    margin: "5vh auto",
-  },
-  menuIcon: {
-    fontSize: "30px",
-  },
-}));
 
 const Header = () => {
   const classes = useStyles();
