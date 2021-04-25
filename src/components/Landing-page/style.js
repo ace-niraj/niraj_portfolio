@@ -5,7 +5,7 @@ import landingBg from "../../assets/bg.jpg";
 const useStyles = makeStyles((theme) => ({
   landing: {
     marginTop: "-11vh",
-    height: "100vh",
+    height: "101vh",
     background: `url(${landingBg}) no-repeat center`,
     backgroundSize: "cover",
   },
