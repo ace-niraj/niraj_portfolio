@@ -31,7 +31,7 @@ const Landing = () => {
                 className={classes.name}
                 variant='h3'
               >
-                I'm Ace
+                I'm Niraj Khatri
               </Typography>
             </Grid>
             <Grid item>

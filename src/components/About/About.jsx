@@ -1,7 +1,7 @@
 import { Button, Grid, Typography } from "@material-ui/core";
-import { Toys } from "@material-ui/icons";
+
 import React from "react";
-import myImg from "../../assets/port.jpg";
+import myImg from "../../assets/my-pic.jpg";
 import useStyles from "./style";
 const About = () => {
   const classes = useStyles();
@@ -16,12 +16,14 @@ const About = () => {
         </Grid>
         <Grid xs={0} md={1} item></Grid>
         <Grid xs={10} md={5} className={classes.aboutText} item>
-          <Typography>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum,
-            ipsam!Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Voluptatum, ipsam!Lorem ipsum dolor sit amet consectetur adipisicing
-            elit. Voluptatum, ipsam!Lorem ipsum dolor sit amet consectetur
-            adipisicing elit. Voluptatum, ipsam!
+          <Typography class={classes.myName}>
+            Niraj Khatri - a web developer
+          </Typography>
+          <Typography class={classes.myInfo}>
+            I am a self-taught MERN Stack developer. I enjoy solving complex
+            problems and the skills I have acquired over the years have led me
+            to develop many web site and web applications along with few mobile
+            application.
           </Typography>
 
           <Button
