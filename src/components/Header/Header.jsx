@@ -42,10 +42,20 @@ const Header = () => {
   const classes = useStyles();
   const [active, setActive] = useState(0);
   const [openDrawer, setDrawer] = useState(false);
+  const [appbar, setAppbar] = useState(false);
 
   const handleChange = (e, value) => {
     setActive(value);
   };
+  const changeAppbar = () => {
+    if (window.scrollY > 0) {
+      setAppbar(true);
+    } else {
+      setAppbar(false);
+    }
+  };
+
+  window.addEventListener("scroll", changeAppbar);
 
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.down("md"));
@@ -55,7 +65,7 @@ const Header = () => {
       value={active}
       onChange={handleChange}
       className={classes.tabContainer}
-      indicatorColor='primary'
+      indicatorColor=''
     >
       {navList.map(({ name, value, key }) => (
         <Tab
@@ -118,7 +128,9 @@ const Header = () => {
   return (
     <>
       <ElevationScroll>
-        <AppBar>
+        <AppBar
+          className={appbar ? `${classes.appbar}` : `${classes.appbarActive}`}
+        >
           <Toolbar disableGutters>
             <img className={classes.logo} src={logo} alt='logo' />
             {matches ? drawer : tabs}

@@ -6,31 +6,56 @@ const Landing = () => {
   const classes = useStyles();
   return (
     <>
-      <Grid
-        className={classes.landing}
-        direction='column'
-        justify='center'
-        alignItems='flex-start'
-        container
-      >
+      <Grid className={classes.landing} alignItems='center' container>
+        <Grid xs={1} item></Grid>
         <Grid item>
-          <Typography color='secondary' variant='h3'>
-            Hello
-          </Typography>
+          <Grid
+            direction='column'
+            justify='center'
+            alignItems='flex-start'
+            container
+            spacing={1}
+          >
+            <Grid item>
+              <Typography
+                className={classes.gridText}
+                color='secondary'
+                variant='h3'
+              >
+                Hello
+              </Typography>
+            </Grid>
+            <Grid item>
+              <Typography
+                className={classes.gridText}
+                className={classes.name}
+                variant='h3'
+              >
+                I'm Ace
+              </Typography>
+            </Grid>
+            <Grid item>
+              <Typography
+                className={classes.gridText}
+                color='secondary'
+                variant='h3'
+              >
+                A web developer
+              </Typography>
+            </Grid>
+            <Grid item>
+              <Button
+                className={classes.landingBtn}
+                color='secondary'
+                variant='outlined'
+                size='large'
+              >
+                Watch More
+              </Button>
+            </Grid>
+          </Grid>
         </Grid>
-        <Grid item>
-          <Typography className={classes.name} variant='h2'>
-            I'm Ace
-          </Typography>
-        </Grid>
-        <Grid item>
-          <Typography color='secondary' variant='h3'>
-            A web developer
-          </Typography>
-        </Grid>
-        <Grid item>
-          <Button variant='contained'>Continue</Button>
-        </Grid>
+        <Grid xs={1} item></Grid>
       </Grid>
     </>
   );

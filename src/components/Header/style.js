@@ -4,6 +4,14 @@ const useStyles = makeStyles((theme) => ({
   toolbarMargin: {
     ...theme.mixins.toolbar,
   },
+  appbar: {
+    backgroundColor: theme.palette.primary,
+    transition: ".5s all ",
+  },
+  appbarActive: {
+    backgroundColor: "transparent",
+    transition: ".5s all ",
+  },
   logo: {
     height: "4rem",
     marginLeft: "25px",
@@ -16,6 +24,9 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: 700,
     minWidth: 10,
     marginRight: "25px",
+    "&:hover": {
+      color: theme.palette.common.blue,
+    },
   },
   tabActive: {
     color: theme.palette.common.blue,
