@@ -4,22 +4,20 @@ const useStyles = makeStyles((theme) => ({
   footer: {
     backgroundColor: theme.palette.common.black,
     width: "100%",
-
+    minHeight: "10vh",
     color: theme.palette.common.white,
   },
   logo: {
     height: "4rem",
-    marginLeft: "25px",
   },
   copyright: {
     fontFamily: "Open Sans",
+    textAlign: "center",
   },
   gridItem: {
     margin: "15px auto",
   },
-  socialIcons: {
-    marginRight: "25px",
-  },
+
   socialIcon: {
     "&:hover": {
       color: theme.palette.common.blue,

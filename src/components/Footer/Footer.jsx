@@ -20,10 +20,12 @@ const Footer = () => {
           justify={match ? "center" : "space-between"}
           alignItems='center'
         >
-          <Grid className={match ? `${classes.gridItem}` : ""} item>
+          <Grid item xs={1}></Grid>
+          <Grid xs={3} className={match ? `${classes.gridItem}` : ""} item>
             <img className={classes.logo} src={logo} alt='footer logo' />
           </Grid>
           <Grid
+            xs={4}
             className={
               match
                 ? `${classes.gridItem} ${classes.copyright}`
@@ -34,10 +36,11 @@ const Footer = () => {
             Copyright &copy; 2021
           </Grid>
           <Grid
+            xs={3}
             className={match ? `${classes.gridItem}` : `${classes.socialIcons}`}
             item
           >
-            <Grid container spacing={3}>
+            <Grid container justify='flex-end' spacing={3}>
               <Grid className={classes.socialIcon} item>
                 <FacebookIcon />
               </Grid>
@@ -49,6 +52,7 @@ const Footer = () => {
               </Grid>
             </Grid>
           </Grid>
+          <Grid item xs={1}></Grid>
         </Grid>
       </footer>
     </>

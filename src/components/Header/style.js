@@ -14,7 +14,6 @@ const useStyles = makeStyles((theme) => ({
   },
   logo: {
     height: "4rem",
-    marginLeft: "25px",
   },
   tabContainer: {
     marginLeft: "auto",
@@ -23,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
     fontFamily: "Open Sans",
     fontWeight: 700,
     minWidth: 10,
-    marginRight: "25px",
+    marginLeft: "25px",
     "&:hover": {
       color: theme.palette.common.blue,
     },

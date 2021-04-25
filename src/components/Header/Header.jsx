@@ -10,6 +10,7 @@ import {
   List,
   ListItem,
   ListItemText,
+  Grid,
 } from "@material-ui/core";
 import { useTheme } from "@material-ui/styles";
 import { useMediaQuery } from "@material-ui/core";
@@ -132,8 +133,12 @@ const Header = () => {
           className={appbar ? `${classes.appbar}` : `${classes.appbarActive}`}
         >
           <Toolbar disableGutters>
-            <img className={classes.logo} src={logo} alt='logo' />
-            {matches ? drawer : tabs}
+            <Grid container alignItems='center'>
+              <Grid xs={1} item></Grid>
+              <img className={classes.logo} src={logo} alt='logo' />
+              {matches ? drawer : tabs}
+              <Grid xs={1} item></Grid>
+            </Grid>
           </Toolbar>
         </AppBar>
       </ElevationScroll>
