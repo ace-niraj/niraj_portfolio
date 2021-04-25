@@ -7,7 +7,7 @@ const Landing = () => {
   return (
     <>
       <Grid className={classes.landing} alignItems='center' container>
-        <Grid xs={1} item></Grid>
+        <Grid xs={3} sm={1} item></Grid>
         <Grid item>
           <Grid
             direction='column'
@@ -55,7 +55,7 @@ const Landing = () => {
             </Grid>
           </Grid>
         </Grid>
-        <Grid xs={1} item></Grid>
+        <Grid xs={3} sm={1} item></Grid>
       </Grid>
     </>
   );
