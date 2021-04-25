@@ -14,6 +14,9 @@ const useStyles = makeStyles((theme) => ({
   },
   gridText: {
     fontFamily: "Opens Sans",
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "2.8rem",
+    },
   },
   name: {
     color: theme.palette.common.blue,
