@@ -13,6 +13,7 @@ import {
   Grid,
 } from "@material-ui/core";
 import { useTheme } from "@material-ui/styles";
+import { Link } from "react-scroll";
 import { useMediaQuery } from "@material-ui/core";
 
 import MenuIcon from "@material-ui/icons/Menu";
@@ -41,13 +42,14 @@ const navList = [
 ];
 const Header = () => {
   const classes = useStyles();
-  const [active, setActive] = useState(0);
+  const [active, setActive] = useState("");
   const [openDrawer, setDrawer] = useState(false);
   const [appbar, setAppbar] = useState(false);
 
   const handleChange = (e, value) => {
     setActive(value);
   };
+
   const changeAppbar = () => {
     if (window.scrollY > 0) {
       setAppbar(true);
@@ -69,13 +71,22 @@ const Header = () => {
       indicatorColor=''
     >
       {navList.map(({ name, value, key }) => (
-        <Tab
-          key={key}
-          className={`${classes.tab} ${
-            active === value ? `${classes.tabActive}` : ""
-          }`}
-          label={name}
-        />
+        <Link
+          activeClass={classes.tabActive}
+          to={`#${name}`}
+          smooth={true}
+          spy
+          offset={-125}
+          duration={1000}
+        >
+          <Tab
+            key={key}
+            className={`${classes.tab} ${
+              active === value ? `${classes.tabActive}` : ""
+            }`}
+            label={name}
+          />
+        </Link>
       ))}
     </Tabs>
   );
@@ -89,28 +100,30 @@ const Header = () => {
       >
         <List className={classes.list}>
           {navList.map(({ name, value, key }) => (
-            <ListItem
-              key={key}
-              className={classes.listItem}
-              onClick={() => {
-                setDrawer(false);
-                setActive(value);
-              }}
-              divider
-              button
-            >
-              <ListItemText
-                disableTypography
-                arial-type='centered'
-                className={`${
-                  active === value
-                    ? `${classes.drawerActive}`
-                    : `${classes.drawerText}`
-                }`}
+            <Link to={`#${name}`} smooth={true}>
+              <ListItem
+                key={key}
+                className={classes.listItem}
+                onClick={() => {
+                  setDrawer(false);
+                  setActive(value);
+                }}
+                divider
+                button
               >
-                {name}
-              </ListItemText>
-            </ListItem>
+                <ListItemText
+                  disableTypography
+                  arial-type='centered'
+                  className={`${
+                    active === value
+                      ? `${classes.drawerActive}`
+                      : `${classes.drawerText}`
+                  }`}
+                >
+                  {name}
+                </ListItemText>
+              </ListItem>
+            </Link>
           ))}
         </List>
       </SwipeableDrawer>

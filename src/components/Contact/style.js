@@ -4,6 +4,9 @@ const useStyles = makeStyles((theme) => ({
   contact: {
     minHeight: "70vh",
   },
+  contactText: {
+    marginBottom: "40px",
+  },
   textField: {
     marginRight: theme.spacing(2),
     marginTop: theme.spacing(2),

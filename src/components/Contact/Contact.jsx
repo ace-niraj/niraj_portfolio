@@ -4,11 +4,13 @@ import useStyles from "./style";
 const Contact = () => {
   const classes = useStyles();
   return (
-    <section className={classes.contact}>
+    <section id='#contact' className={classes.contact}>
       <Grid container>
         <Grid xs={1}></Grid>
         <Grid item>
-          <Typography variant='h3'> Contact Me</Typography>
+          <Typography className={classes.contactText} variant='h3'>
+            Contact Me
+          </Typography>
         </Grid>
         <Grid xs={1}></Grid>
       </Grid>

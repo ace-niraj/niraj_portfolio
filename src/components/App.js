@@ -6,6 +6,7 @@ import Service from "./Services/Services";
 import Skills from "./Skills/Skill";
 import Contact from "./Contact/Contact";
 import { ThemeProvider } from "@material-ui/styles";
+
 import theme from "./Theme";
 function App() {
   return (

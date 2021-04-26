@@ -54,7 +54,7 @@ const Skill = () => {
   ];
 
   return (
-    <section className={classes.skill}>
+    <section id='#skills' className={classes.skill}>
       <Grid container>
         <Grid xs={1} item></Grid>
         <Grid item>

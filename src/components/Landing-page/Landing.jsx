@@ -5,7 +5,7 @@ import useStyles from "./style";
 const Landing = () => {
   const classes = useStyles();
   return (
-    <>
+    <div id='#home'>
       <Grid className={classes.landing} alignItems='center' container>
         <Grid xs={1} item></Grid>
         <Grid item>
@@ -57,7 +57,7 @@ const Landing = () => {
         </Grid>
         <Grid xs={1} item></Grid>
       </Grid>
-    </>
+    </div>
   );
 };
 

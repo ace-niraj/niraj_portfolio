@@ -12,7 +12,7 @@ import cardImg from "../../assets/port.jpg";
 const Services = () => {
   const classes = useStyles();
   return (
-    <section className={classes.services}>
+    <section id='#services' className={classes.services}>
       <Grid container>
         <Grid xs={1} item />
         <Grid item>

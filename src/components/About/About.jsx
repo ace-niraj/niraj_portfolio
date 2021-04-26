@@ -6,7 +6,7 @@ import useStyles from "./style";
 const About = () => {
   const classes = useStyles();
   return (
-    <section className={classes.about}>
+    <section id='#about' className={classes.about}>
       <Grid justify='center' className={classes.container} container>
         <Grid xs={10} md={4} item>
           <Typography className={classes.title} variant='h3'>
