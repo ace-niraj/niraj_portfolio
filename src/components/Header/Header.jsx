@@ -36,7 +36,7 @@ const navList = [
   { key: 1, name: "home", value: 0 },
   { key: 2, name: "about", value: 1 },
   { key: 3, name: "services", value: 2 },
-  { key: 4, name: "portfolio", value: 3 },
+  { key: 4, name: "skills", value: 3 },
   { key: 5, name: "contact", value: 4 },
 ];
 const Header = () => {

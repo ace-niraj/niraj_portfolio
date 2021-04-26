@@ -22,6 +22,12 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.common.blue,
     fontFamily: "Open Sans",
     fontWeight: 700,
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "2.8rem",
+    },
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "2.5rem",
+    },
   },
   landingBtn: {
     fontFamily: "Open Sans",
